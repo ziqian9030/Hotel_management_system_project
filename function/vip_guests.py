@@ -7,6 +7,25 @@ def add_vip():
     night = int(input(" Enter number of night stayed in the hotel : "))
     price = int(input(" Enter the price per room : "))
 
+    total_price = night * price
+    if total_price < 200 and total_price >= 100:
+        total_price = night*price*0.95
+        print(" u get 5%")
+    elif total_price <300 and total_price >= 200:
+        total_price = night*price*0.9
+        print(" u get 10%")
+    elif total_price <400 and total_price >= 300:
+        total_price = price*night*0.8
+        print(" u get 20%")
+    elif total_price <500 and total_price >= 400:
+        total_price = night*price*0.7
+        print(" u get 30%")
+    elif total_price >= 500:
+        total_price = night*price*0.6
+        print(" u get 40%")
+    else:
+        total_price = night*price
+
     file = open("vipguest.txt","a")
 
     file.write(f"VIP ID : {id}\n")
@@ -16,6 +35,7 @@ def add_vip():
     file.write(f"VIP room_number : {room_number}\n")  
     file.write(f"Nights : {night}\n")  
     file.write(f"Price per night : {price}\n")  
+    file.write(f" Total price : {total_price}\n")
     
     file.close()
 

@@ -1,6 +1,7 @@
 import function.vip_guests as vip_fuction
 import Auth.login as login_fuction
 import function.normal_guest as guest_function
+import function.room_mamange as room_fuction
 if login_fuction.login():
     while True:
         print(" ======= Welcome to hotel system =======")
@@ -57,6 +58,31 @@ if login_fuction.login():
                             case 6:
                                 guest_function.exit()
                                 break
+            case 2:
+                print(" ===== Room manage system =====")
+                print(" 1. Add room")
+                print(" 2. Show room")
+                print(" 3. Search room")
+                print(" 4. Update room")
+                print(" 5. Delete room")
+                print(" 6. exist room")
+                choice_5 = int(input(" Enter your choice: "))
+                match choice_5:
+                    case 1:
+                        room_fuction.add_room()
+                    case 2:
+                        room_fuction.show_room()
+                    case 3:
+                        room_fuction.search_room()
+                    case 4:
+                        room_fuction.update_room()
+                    case 5:
+                        room_fuction.delete_room()
+                    case 6:
+                        room_fuction.exist()
+                    
+
+
 
                         
 
